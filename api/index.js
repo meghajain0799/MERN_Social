@@ -9,6 +9,7 @@ const authRoute = require("./routes/auth")
 const postRoute = require("./routes/posts")
 const multer = require("multer")
 const path = require("path")
+const cors = require('cors');
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ mongoose.connect(process.env.MONGO_URL,
     console.log("MongoDB connected")
 }));
 
-const cors = require('cors');
+
 const corsOptions ={
     origin:'http://localhost:3000', 
     credentials:true,            //access-control-allow-credentials:true
