@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/*"
+  from = "/https://incomparable-medovik-995c1d.netlify.app/*"
   to = "https://mjsocial2.onrender.com"
   status = 200
   force = true
