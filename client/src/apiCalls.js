@@ -6,7 +6,7 @@ export const loginCall = async (userCredential,dispatch) => {
     dispatch({type: "LOGIN_START"})
     try{
         console.log(userCredential)
-        const res = await axios.post(`auth/login`, userCredential);
+        const res = await axios.post(`https://mjsocial2.onrender.com/api/auth/login`, userCredential);
         dispatch({type:"LOGIN_SUCCESS", payload:
         res.data });
     } catch (err) {
