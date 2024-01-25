@@ -12,7 +12,7 @@ export default function Post({post}) {
     const [isLiked,setIsLiked] = useState(false)
     const [user, setUser] = useState({});
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
-    const F_URL = process.env.REACT_APP_API_ENDPOINT
+    // const F_URL = process.env.REACT_APP_API_ENDPOINT
     const {user:currentUser} = useContext(AuthContext);
 
 useEffect(()=>{
@@ -21,7 +21,7 @@ useEffect(()=>{
 
     useEffect(()=>{
         const fetchUser = async () => {
-          const res = await axios.get(`/users?userId=${post.userId}`)
+          const res = await axios.get(`https://mjsocial2.onrender.com/api/users?userId=${post.userId}`)
           setUser(res.data)
         };
     
@@ -31,7 +31,7 @@ useEffect(()=>{
 
     const likeHandler = ()=>{
         try {
-            axios.put("/posts/"+post._id+"/like", {userId: currentUser._id} )
+            axios.put("https://mjsocial2.onrender.com/api/posts/"+post._id+"/like", {userId: currentUser._id} )
         }catch(err){}
         setLike(isLiked ? like-1 : like+1)
         setIsLiked(!isLiked)

@@ -32,7 +32,8 @@ app.use(cors(corsOptions));
 app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://incomparable-medovik-995c1d.netlify.app"
+      "https://incomparable-medovik-995c1d.netlify.app",
+      "http://localhost:3000"
     );
     next();
 });
