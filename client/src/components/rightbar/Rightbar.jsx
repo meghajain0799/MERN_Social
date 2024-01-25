@@ -20,7 +20,7 @@ export default function Rightbar({user}) {
     useEffect(()=>{
         const getFriends = async ()=>{
             try{
-                const friendList = await axios.get("https://mjsocial2.onrender.com/api/users/friends/"+user.id)
+                const friendList = await axios.get("https://mjsocial2.onrender.com/api/users/friends/"+user._id)
                 setFriends(friendList.data);
             }catch(err){
                 console.log(err)
