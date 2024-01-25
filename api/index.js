@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URL,
 
 
 const corsOptions ={
-    origin:'https://mjsocial.netlify.app/', 
+    origin:'https://mjsocial.netlify.app', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
@@ -32,7 +32,7 @@ app.use(cors(corsOptions));
 app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://mjsocial.netlify.app/",
+      "https://mjsocial.netlify.app",
       "http://localhost:3000"
     );
     next();
