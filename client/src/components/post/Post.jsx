@@ -12,6 +12,7 @@ export default function Post({post}) {
     const [isLiked,setIsLiked] = useState(false)
     const [user, setUser] = useState({});
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
+    const F_URL = process.env.REACT_APP_API_ENDPOINT
     const {user:currentUser} = useContext(AuthContext);
 
 useEffect(()=>{

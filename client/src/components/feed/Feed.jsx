@@ -9,15 +9,15 @@ import { AuthContext } from "../../context/AuthContext";
 export default function Feed({username}) {
   // const user = Users.filter(u=> u.id===1)
   // console.log(user[0].username)
-  const URL = process.env.BASE_URL;
+  const F_URL = process.env.REACT_APP_API_ENDPOINT;
   const [posts, setPosts] = useState([]);
   const {user} = useContext(AuthContext);
 
   useEffect(()=>{
     const fetchPosts = async () => {
       const res = username 
-       ? await axios.get(URL+"/posts/profile/" + username)
-       : await axios.get(URL+"/posts/timeline/" + user._id)
+       ? await axios.get(F_URL+"/posts/profile/" + username)
+       : await axios.get(F_URL+"/posts/timeline/" + user._id)
       setPosts(res.data.sort((p1,p2)=>{
         return new Date(p2.createdAt) -new Date(p1.createdAt)
       }))
@@ -25,7 +25,7 @@ export default function Feed({username}) {
 
    fetchPosts();
     
-  }, [username,user._id,URL])
+  }, [username,user._id,F_URL])
 
   return (
     <div className="feed">
